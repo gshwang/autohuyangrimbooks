@@ -70,16 +70,18 @@ public class AutoBooksMain {
 		AutoBooksClient autobooksclient = new AutoBooksClient();
 		
 		if(args.length<6){
-			System.out.println("Usage: java -jar autohuyangrimbooks.jar F0101040xxxxxx 20130902 1 1 id pw");
+			System.out.println("Usage: java -jar autohuyangrimbooks.jar 지역코드 F0101040xxxxxx 20130902 1 1 id pw");
 			System.exit(1);
 		}else{
-			autobooksclient.setFCLTID(args[0]);
-			autobooksclient.setUSE_BGN_DTM(args[1]);
-			autobooksclient.setAVAIL_DAY(args[2]);
-			autobooksclient.setPARK1(args[3]);
-			autobooksclient.setMEMBER_ID(args[4]);
-			autobooksclient.setMEMBER_PW(args[5]);
+			autobooksclient.setAREA_CODE(args[0]);
+			autobooksclient.setFCLTID(args[1]);
+			autobooksclient.setUSE_BGN_DTM(args[2]);
+			autobooksclient.setAVAIL_DAY(args[3]);
+			autobooksclient.setPARK1(args[4]);
+			autobooksclient.setMEMBER_ID(args[5]);
+			autobooksclient.setMEMBER_PW(args[6]);
 			System.out.println("입력예약정보....");
+			System.out.println("지역코드: " + autobooksclient.getAREA_CODE());
 			System.out.println("데크번호: " + autobooksclient.getFCLTID());
 			System.out.println("예약일자: " + autobooksclient.getUSE_BGN_DTM());
 			System.out.println("예약일수: " + autobooksclient.getAVAIL_DAY());

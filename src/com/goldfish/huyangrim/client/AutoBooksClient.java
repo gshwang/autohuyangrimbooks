@@ -86,6 +86,7 @@ public class AutoBooksClient {
 	private String USE_BGN_DTM =  ""; //"20130903";
 	private String AVAIL_DAY = ""; //"20130902";
 	private String FCLTID = ""; //"F01010400500201";
+	private String AREA_CODE = "3000001"; //서울/경기
 	
 	static final String LOGON_SITE = "www.huyang.go.kr";
 	static final int    LOGON_PORT = 80;
@@ -319,7 +320,7 @@ public class AutoBooksClient {
 		Document doc = null;
 		try {
 			httpclient.executeMethod(selectPost);
-			System.out.println(selectPost.getResponseBodyAsString());
+			//System.out.println(selectPost.getResponseBodyAsString());
 			doc =Jsoup.parse( selectPost.getResponseBodyAsString());
 			// System.out.println(doc.getElementsByAttributeValue("alt", "예약").toString());
 		} catch (HttpException e) {
@@ -464,6 +465,14 @@ public class AutoBooksClient {
 
 	public void setPARK1(String pARK1) {
 		PARK1 = pARK1;
+	}
+
+	public String getAREA_CODE() {
+		return AREA_CODE;
+	}
+
+	public void setAREA_CODE(String aREA_CODE) {
+		AREA_CODE = aREA_CODE;
 	}
 
 	
